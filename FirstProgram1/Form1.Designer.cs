@@ -82,7 +82,7 @@
             tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 2, 3, 2);
-            tabPage2.Size = new Size(1166, 459);
+            tabPage2.Size = new Size(1166, 460);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Home";
             tabPage2.UseVisualStyleBackColor = true;
@@ -113,6 +113,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1166, 422);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panel1
             // 
@@ -133,7 +134,7 @@
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
             materialButton1.Location = new Point(0, 0);
-            materialButton1.Margin = new Padding(4, 4, 4, 4);
+            materialButton1.Margin = new Padding(4);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
             materialButton1.NoAccentTextColor = Color.Empty;

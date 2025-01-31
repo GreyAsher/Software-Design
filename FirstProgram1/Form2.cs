@@ -39,15 +39,28 @@ namespace FirstProgram1
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            var entity = new DomainLayer.Models.Program
+
+            if (Form1.isEdit)
             {
+                Form1.ProgramEntity.ProgramName = textBoxProgramName.Text;
+                dbContext.Update
+            }
+            else
+            {
+                var entity = new DomainLayer.Models.Program
+                {
 
-                ProgramName = textBoxProgramName.Text,
-                Description = textBoxProgramDescription.Text,
-                Department = textBoxProgramDepartment.Text,
-            };
+                    ProgramName = textBoxProgramName.Text,
+                    Description = textBoxProgramDescription.Text,
+                    Department = textBoxProgramDepartment.Text,
+                };
 
-            dbContext.Add(entity);
+                dbContext.Add(entity);
+
+            }
+
+
+            
             dbContext.Save();
             MessageBox.Show("Program has been added successfully.", "Adding Program", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
