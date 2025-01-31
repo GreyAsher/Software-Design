@@ -21,8 +21,20 @@ namespace FirstProgram1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            getPrograms();
+        }
+
+        public void getPrograms()
+        {
             var programs = dbContext.GetAll();
             dataGridView1.DataSource = programs;
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            var form2 = new Form2(dbContext);
+            form2.Form1 = this;
+            form2.ShowDialog();
         }
 
         //private void exitToolStripMenuItem_Click(object sender, EventArgs e)
